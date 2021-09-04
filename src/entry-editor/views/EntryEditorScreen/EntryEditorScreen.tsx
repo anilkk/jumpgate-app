@@ -289,6 +289,7 @@ const EntryEditor: React.FC<ConfigProps> = (props) => {
                         // @ts-ignore */
                         document
                           .getElementById('storybook-component-preview-iframe')
+                          // @ts-ignore */
                           .contentWindow.location.reload();
                       }}
                       buttonType="primary"
