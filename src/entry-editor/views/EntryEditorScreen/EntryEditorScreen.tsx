@@ -282,8 +282,15 @@ const EntryEditor: React.FC<ConfigProps> = (props) => {
                       height: iframeHeight ? iframeHeight + 20 : undefined,
                     }}
                   >
+                    {/* 
+                      // @ts-ignore */}
+                    <button onClick="document.getElementById('storybook-component-preview-iframe').contentWindow.location.reload();">
+                      {' '}
+                      refresh{' '}
+                    </button>
                     <iframe
                       title="Preview"
+                      id="storybook-component-preview-iframe"
                       src={getEntryFieldValue(
                         guideline.fields.externalReferenceUrl,
                         guideline.sys.locale || sdk.locales.default,
