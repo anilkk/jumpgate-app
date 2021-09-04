@@ -274,6 +274,18 @@ const EntryEditor: React.FC<ConfigProps> = (props) => {
                   </div>
                 </div>
                 <div className={styles.containerPreview}>
+                  <Button
+                    onClick={() => {
+                      // @ts-ignore */
+                      document
+                        .getElementById('storybook-component-preview-iframe')
+                        // @ts-ignore */
+                        .contentWindow.location.reload();
+                    }}
+                    buttonType="primary"
+                  >
+                    Refresh the view
+                  </Button>
                   <div
                     className={`${styles.iframeContainer} ${
                       iframeHeight === undefined
@@ -284,18 +296,6 @@ const EntryEditor: React.FC<ConfigProps> = (props) => {
                       height: iframeHeight ? iframeHeight + 20 : undefined,
                     }}
                   >
-                    <Button
-                      onClick={() => {
-                        // @ts-ignore */
-                        document
-                          .getElementById('storybook-component-preview-iframe')
-                          // @ts-ignore */
-                          .contentWindow.location.reload();
-                      }}
-                      buttonType="primary"
-                    >
-                      Refresh the view
-                    </Button>
                     <iframe
                       title="Preview"
                       id="storybook-component-preview-iframe"
