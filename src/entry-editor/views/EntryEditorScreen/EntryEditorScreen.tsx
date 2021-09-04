@@ -2,6 +2,8 @@ import { Entry } from 'contentful';
 import { EditorExtensionSDK } from 'contentful-ui-extensions-sdk';
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
+import { Button } from '@contentful/forma-36-react-components';
+
 import {
   SkeletonContainer,
   SkeletonBodyText,
@@ -282,12 +284,20 @@ const EntryEditor: React.FC<ConfigProps> = (props) => {
                       height: iframeHeight ? iframeHeight + 20 : undefined,
                     }}
                   >
-                    {/* 
-                      // @ts-ignore */}
-                    <button onClick="document.getElementById('storybook-component-preview-iframe').contentWindow.location.reload();">
-                      {' '}
-                      refresh{' '}
-                    </button>
+                    <Button
+                      onClick={() => {
+                        {
+                          /* 
+                        // @ts-ignore */
+                        }
+                        document
+                          .getElementById('storybook-component-preview-iframe')
+                          .contentWindow.location.reload();
+                      }}
+                      buttonType="primary"
+                    >
+                      Refresh the view
+                    </Button>
                     <iframe
                       title="Preview"
                       id="storybook-component-preview-iframe"
