@@ -286,10 +286,7 @@ const EntryEditor: React.FC<ConfigProps> = (props) => {
                   >
                     <Button
                       onClick={() => {
-                        {
-                          /* 
                         // @ts-ignore */
-                        }
                         document
                           .getElementById('storybook-component-preview-iframe')
                           .contentWindow.location.reload();
